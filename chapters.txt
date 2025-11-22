@@ -1,0 +1,866 @@
+[Anaesthesia]
+1 History and Ethical Aspects of Anaesthesia 4
+2 Preoperative Evaluation 15
+3 CNS and CVS Monitoring in Anaesthesia 29
+4 Respiratory Monitoring in Anaesthesia 47
+5 Airway Devices 61
+6 Intubation 75
+7 Breathing Systems 97
+8 Anesthesia Workstation 113
+9 BLS and PALS 137
+10 ACLS 152
+11 Ventilation and O2 Delivery Systems 175
+12 Depolarising Muscle Relaxants 184
+13 Non-Depolarising Muscle Relaxants 200
+14 Inhaled Anaesthetics - Properties, N2O and Halo... 217
+15 Inhaled Anaesthetics - Fluorinated Agents, Iner... 234
+16 Intravenous Anesthesia - Barbiturates, Benzodia... 249
+17 Intravenous Anesthesia - Etomidate, Ketamine an... 268
+18 Local Anaesthetics - General Properties 284
+19 Local Anesthetics - Specific Drugs 297
+20 Regional Anesthesia: Techniques 313
+21 Regional Anesthesia: Complications and Contrain... 332
+22 Peripheral Nerve Blocks 348
+23 Anaesthetic Implication of Concurrent Diseases 359
+24 Pediatric and Obstetric Anaesthesia 380
+25 Complications of Anaesthesia 399
+
+[Anatomy]
+1 Gametogenesis 5
+2 Pre-Embryonic Phase of Development 19
+3 Embryonic Phase of Development 30
+4 Placenta, Fetal Membranes and Twinning 46
+5 Pharyngeal arches, Skeletal & Muscular Systems 63
+6 Cardiovascular and Respiratory Systems 87
+7 Alimentary, Hepatobiliary systems, Pancreas and... 111
+8 Face, Nose & Palate, Eye, Ear 132
+9 Nervous System and Endocrine Glands 146
+10 Urogenital System 164
+11 Cell Structure, Epithelia, Glands & Connective ... 179
+12 Bone, Cartilage & Muscular Tissue 213
+13 Nervous and Endocrine Systems 230
+14 Cardiovascular, Lymphatic and Respiratory Systems 246
+15 Digestive, Hepatobiliary & Genitourinary Systems 262
+16 Skin & Special Senses, Eye and Ear 286
+17 Cranial Nerves 306
+18 Meninges and dural venous sinuses 327
+19 Ventricular System and Subarachnoid Space 341
+20 Cerebrum 361
+21 White Matter of the Brain 368
+22 Basal Ganglia and Limbic System 385
+23 Diencephalon 392
+24 Brainstem 404
+25 Cerebellum 422
+26 Vascular supply of Brain 434
+27 Spinal Cord 459
+28 Osteology, Scalp and Face 471
+29 Deep fascia and Triangles of the neck 501
+30 Muscles, Neurovascular Anatomy of Head & Neck 521
+31 Glands of the Head and Neck 556
+32 Tongue and Palate 582
+33 Pharynx 593
+34 Larynx 601
+35 Upper Limb Bones and Joints 619
+36 Fossae and Spaces of the Upper Limb 641
+37 Breast 658
+38 Brachial Plexus and Nerves 666
+39 Muscles - Upper Limb 703
+40 Vessels-Upper limb 733
+41 General Anatomy of Thorax 753
+42 Thoracic Wall 769
+43 Mediastinum 792
+44 Diaphragm 806
+45 Heart 815
+46 Lungs and Pleura 845
+47 Anterior Abdominal Wall 861
+48 Abdominal cavity and Peritoneum 878
+49 GI Tract 892
+50 Hepatobiliary system, Spleen & Pancreas 913
+51 KUB & Adrenal Gland 940
+52 Internal and external genitalia 972
+53 Pelvis & Perineum 997
+54 Bones of the Lower Limb 1022
+55 Joints of the Lower Limb 1040
+56 Muscles of the Lower Limb 1060
+57 Nerves & Vessels of Lower Limb 1088
+58 Important Structures of Lower Limb 1110
+59 Vertebral Column 1127
+60 Bones, Joints and Cartilage 1142
+61 Muscles and Tendons 1170
+62 Cardiovascular, Lymphatic and Nervous Systems 1187
+63 Skin, Connective Tissue and Ligaments 1205
+
+[Biochemistry]
+1 Chemistry of Carbohydrates, Amino sugars and Mu... 4
+2 Glycolysis and gluconeogenesis 21
+3 Glycogen metabolism and glycogen storage disorders 45
+4 HMP shunt pathway, Fructose , Galactose metabolism 60
+5 ETC and bioenergetics 71
+6 Krebs Cycle 84
+7 Amino acids: Basics 99
+8 Amino acid: Metabolism 117
+9 Amino acid: Metabolic disorder 133
+10 Protein structure and function 153
+11 Urea cycle and its disorders 177
+12 Lipids: Basics 186
+13 Fatty acid oxidation and ketogenesis 196
+14 Biosynthesis of fatty acids and Eicosanoids 211
+15 Metabolism of Acylglycerols and Sphingolipids 229
+16 Cholesterol Synthesis, Transport and Excretion 247
+17 Porphyrins and bile pigments 262
+18 Enzymes - Mechanism of Action & Clinical Import... 283
+19 Enzyme Kinetics and Regulation of Activity 298
+20 Fat soluble vitamins 318
+21 Energy releasing vitamins 331
+22 Hematopoietic and other vitamins 346
+23 Antioxidants & Minerals 358
+24 Basics of genetics - Nucleotide metabolism and ... 368
+25 DNA organization, replication and repair 381
+26 RNA synthesis, processing and modification 404
+27 Regulation of gene expression 420
+28 Molecular genetics, recombinant DNA & genomic t... 431
+
+[Dermatology]
+1 Anatomy & Physiology of Skin 4
+2 Dermatopathology of Skin Lesions 26
+3 Morphology and Investigations of Skin Lesions 42
+4 Acne, Rosacea and Others 75
+5 Disorders of Hair and Nails 96
+6 Disorders of Skin Pigmentation 141
+7 Dermatitis 180
+8 Urticaria & Angioedema 207
+9 Reactive Skin Diseases and Drug Eruptions 223
+10 Papulosquamous Disorders 239
+11 Psoriasis 260
+12 Vesiculobullous Diseases 281
+13 Mycobacterial Infections 313
+14 Bacterial Infections 349
+15 Viral Infections 371
+16 Fungal and Protozoal Infections 397
+17 Arthropod and Parasitic Infections 432
+18 Syphilis 452
+19 Non Syphilitic Sexually Transmitted Diseases 471
+20 Genodermatoses & Nutritional Disorders 493
+21 Connective Tissue Disorders 521
+22 Skin Malignancies 547
+23 Systemic Diseases and Skin 572
+
+[ENT]
+1 Embryology of Ear and Malformations 4
+2 Anatomy of External Ear 13
+3 Anatomy of Middle Ear 30
+4 Anatomy of Mastoid 53
+5 Anatomy of Inner Ear 63
+6 Disorders of External Ear 79
+7 Disorders of Middle Ear 105
+8 Cholesteatoma and Types of CSOM 122
+9 CSOM - Treatment and Complications 135
+10 Otosclerosis 153
+11 Meniere’s Disease 170
+12 Tumors of Ear 186
+13 Anatomy of Facial Nerve 205
+14 Facial Nerve Disorders 221
+15 Eustachian Tube 239
+16 Physiology of hearing and Tuning fork tests 251
+17 Audiometric tests and Special tests of hearing 268
+18 Anatomy of Nose 285
+19 Anatomy of Paranasal Sinuses 305
+20 Physiology of Nose and Paranasal Sinuses 315
+21 Epistaxis 323
+22 Congenital Anomalies of Nose and Disease of Nose 339
+23 Rhinitis 356
+24 Disorder of Nasal Septum and Nasal Polyposis 369
+25 Trauma of Nose and Face 384
+26 Tumors of Nose and PNS 404
+27 Sinusitis and its Complication 417
+28 Anatomy and Physiology of Pharynx 441
+29 Adenoids 450
+30 Tonsils 460
+31 Abscesses of Pharynx 480
+32 Nasopharyngeal Angiofibroma 496
+33 Nasopharyngeal Carcinoma 507
+34 Anatomy and Physiology of Larynx 516
+35 Stridor and Congenital Conditions of Larynx 530
+36 Voice and Speech Disorders 542
+37 Laryngeal Carcinoma 556
+38 Instruments 566
+
+[FMT]
+1 Skeletal and Dental Age Determination 4
+2 Race, Sex and Stature Determination 24
+3 Fingerprint and Tattoos 42
+4 BNS, BNSS, and BSA 54
+5 Death and Post-Mortem Changes 74
+6 Medico Legal Autopsy 96
+7 Mechanical Injuries 106
+8 Regional injuries 125
+9 Thermal Injuries 146
+10 Firearm Injuries and Blast Injuries 165
+11 Mechanical Asphyxia 191
+12 Drowning 214
+13 Sexual Offences and Abortion 225
+14 Childhood Violence, Infanticide and Starvation 240
+15 Poisoning: General Considerations 251
+16 Organophosphorus Poisoning 268
+17 Corrosives and Asphyxiants 279
+18 Alcohol Poisoning 295
+19 Inorganic Irritants - Metallic and Non-metallic 306
+20 Organic Irritants - Plant and Animal Poisons 325
+21 CNS - Narcotics and Deliriants 348
+
+[Medicine]
+1 Clinical examination 7
+2 Acid-Base Disorders 27
+3 General Principles of Endocrinology 50
+4 Disorders of Anterior Pituitary 57
+5 Pituitary Tumours and Sheehan's Syndrome 69
+6 Posterior Pituitary - ADH, Oxytocin & Diabetes ... 80
+7 Syndrome of Inappropriate Anti-Diuretic Hormone... 92
+8 Thyroid Disorders - Clinical Features 98
+9 Thyroid Disorders - Management 114
+10 Multiple Endocrine Neoplasia 125
+11 Pheochromocytoma 132
+12 Cushing's Syndrome 141
+13 Adrenal Insufficiency and Hyperaldosteronism 154
+14 Diabetes Mellitus: Types, Clinical Features and... 168
+15 Diabetes Mellitus: Complications and their Mana... 187
+16 Reproductive Endocrinology 209
+17 Disorders of Parathyroid and Calcium Homeostasis 219
+18 Obesity 238
+19 Hyperbilirubinemias and Tests of Liver Function 247
+20 Alcoholic Liver Diseases and Non-Alcoholic Fatt... 263
+21 Viral Hepatitis 272
+22 Autoimmune Disorders of Hepatobiliary System 292
+23 Acute Liver Failure and Liver Transplantation 302
+24 Hemochromatosis and Wilson's disease 315
+25 Cirrhosis and Complications 330
+26 Peptic Ulcer Disease and Related Disorders 350
+27 Evaluation of Diarrhea 364
+28 Irritable Bowel Syndrome 374
+29 Inflammatory Bowel Disease - Clinical Features ... 383
+30 Inflammatory Bowel Disease - Complications and ... 401
+31 Malabsorption Syndromes 417
+32 Other Gastrointestinal Conditions 437
+33 Large and medium vessel vasculitis 449
+34 Small vessel vasculitis 461
+35 Crystal Arthropathies 473
+36 Sjogren's Syndrome and Scleroderma 484
+37 Sarcoidosis 500
+38 Dermatomyositis and Related Disorders 511
+39 Seronegative Spondyloarthritides 526
+40 SLE and APS 540
+41 Rheumatoid Arthritis 558
+42 Asthma & COPD 573
+43 Pneumonia 595
+44 Interstitial Lung Diseases and pneumoconiosis 615
+45 Bronchiectasis and Lung Abscess 632
+46 Pulmonary Function Tests 649
+47 Respiratory Failure and ARDS 660
+48 Neoplasms of the Lung 667
+49 Sleep apnea 677
+50 Urine Analysis 685
+51 Chronic Kidney Disease 695
+52 Acute Kidney Injury 714
+53 Renal Replacement Therapy 731
+54 Cystic and Inherited Disorders of the Kidney 748
+55 Renal Tubular Disorders 759
+56 Vascular Diseases of Kidney 770
+57 Diagnosis of cardiovascular disorders 779
+58 ECG Basics 803
+59 Supraventricular Arrhythmias 829
+60 Ventricular Arrhythmias and Heart Blocks 860
+61 Valvular Heart Diseases 888
+62 Infective Endocarditis and Acute rheumatic fever 907
+63 Hypertensive Vascular Disease 928
+64 Ischemic Heart Disease - Presentation and Diagn... 940
+65 Ischemic Heart Disease - Complications and Mana... 958
+66 Cardiomyopathy and Myocarditis 976
+67 Heart Failure 991
+68 Pericardial Diseases 1006
+69 Pulmonary Hypertension 1020
+70 Diseases of Aorta and Peripheral Arteries 1025
+71 DVT and Pulmonary Embolism 1036
+72 General Neurology, Brain Death, and GCS 1052
+73 Seizures and Epilepsy 1065
+74 Ischemic Stroke 1087
+75 Brainstem Syndromes and Hemorrhagic Stroke 1110
+76 Peripheral Neuropathy 1132
+77 Guillain-Barre Syndrome and Other Immune-mediat... 1142
+78 Diseases of the Spinal Cord 1156
+79 Myasthenia gravis and Other Neuromuscular Junct... 1170
+80 Multiple Sclerosis & Other Demyelinating Disorders 1183
+81 Headache Disorders 1194
+82 Movement Disorders 1209
+83 ALS and Other Motor Neuron Diseases 1234
+84 Ataxic Disorders 1242
+85 Cranial Nerve Disorders 1251
+86 Infections of the Nervous System 1265
+87 Hypoproliferative Anemia 1276
+88 Macrocytic Anemia 1295
+89 Hemolytic Anemia 1308
+90 Myeloproliferative Disorders and Aplastic Anemia 1328
+91 Platelet Disorders 1343
+92 Acute Leukemia 1367
+93 Plasma Cell Disorders 1387
+94 Chronic Myeloid Leukemia and Chronic Lymphoid L... 1403
+95 Lymphomas 1415
+96 Coagulation Disorders 1438
+97 Haemoglobinopathies 1458
+98 Blood Bank & Transfusion Medicine 1465
+99 HIV / AIDS - Epidemiology and Clinical Features 1475
+100 HIV / AIDS - Management and Prophylaxis 1493
+101 COVID 19 - Epidemiology and Clinical Features 1508
+102 COVID 19 - Investigations 1521
+103 COVID 19 - Treatment 1535
+104 COVID 19 - Prophylaxis and Complications 1547
+
+[Microbiology]
+1 General Microbiology 4
+2 Components of Immune system 30
+3 Structure and Functions of the Immune System & ... 55
+4 Hypersensitivity 70
+5 Immune Disorders 83
+6 Streptococci and Enterococci 96
+7 Staphylococci 115
+8 Corynebacterium, Listeria and Actinomyces 128
+9 Clostridium and Bacillus 147
+10 Mycobacteria Tuberculosis 164
+11 Other Mycobacteria 178
+12 Escherichia, Proteus and Klebsiella 190
+13 Shigella and Salmonella 207
+14 Vibrio and Campylobacterales 218
+15 Pseudomonas and Burkholderiales 238
+16 Haemophilus 249
+17 Miscellaneous Bacteria - Yersinia, Brucella, Ba... 262
+18 Gram Negative Cocci 284
+19 Rickettsia, Chlamydia and Mycoplasma 299
+20 Spirochetes 316
+21 General Properties of Viruses 336
+22 DNA Viruses 351
+23 Hepatitis 373
+24 HIV 390
+25 Myxoviruses and Rhabdoviruses 399
+26 Arboviruses and Picorna Viruses 416
+27 Miscellaneous Viruses - Rubella, Coronaviruses,... 432
+28 Superficial and Systemic Mycoses 447
+29 Opportunistic Mycoses 473
+30 General Parasitology 489
+31 Protozoology - Amoebae, Ciliates & Flagellates 505
+32 Protozoology - Sporozoa 535
+33 Helminthology - Cestodes & Trematodes 553
+34 Helminthology - Nematodes 575
+35 Applied Microbiology 602
+
+[OBGYN]
+1 Anatomy of Female Pelvic Organs 5
+2 The Physiology of Conception 32
+3 Maternal Pelvis and Fetal Skull 48
+4 Placenta and Fetal Membranes 66
+5 Sexual Development, Puberty and Adolescence 88
+6 Physiological Changes During Pregnancy 110
+7 Diagnosis of Pregnancy and Antenatal Care 127
+8 Antenatal Investigations 145
+9 Obstetrical Imaging 159
+10 Normal Labour 177
+11 Abnormal Labour 205
+12 Induction and Augmentation of Labour 221
+13 Malpresentations 235
+14 Operative Vaginal Delivery 260
+15 Caesarean Section and Vaginal Birth After Caesa... 272
+16 Puerperium 286
+17 Multifetal Pregnancy 304
+18 Ectopic Pregnancy 332
+19 Abortion and Medical Termination of Pregnancy 349
+20 Antepartum Hemorrhage 372
+21 Postpartum Haemorrhage 393
+22 Preterm Labor and Postterm Pregnancy 416
+23 Gestational Trophoblastic Diseases 435
+24 Anemia in Pregnancy 454
+25 Hypertensive Disorders in Pregnancy 467
+26 Diabetes in Pregnancy 490
+27 Cardiovascular Conditions in Pregnancy 504
+28 Rhesus Isoimmunization 520
+29 Hepatic Disorders and Infections in Pregnancy 533
+30 Disorders of Menstruation 554
+31 Uro-gynecology 571
+32 Prolapse 591
+33 Fibroid 614
+34 Endometriosis and Adenomyosis 639
+35 Disorders of Ovary 657
+36 Contraception and Sterilization 670
+37 Vaginal Infections 699
+38 Vulval Infections 716
+39 Pelvic Inflammatory Disease 731
+40 Genital Tuberculosis 751
+41 Infertility 761
+42 Perimenopause, Menopause and Post-Menopausal Bl... 785
+43 Ovarian Tumors 797
+44 Vulval & Vaginal Malignancy 820
+45 Carcinoma Cervix 829
+46 Carcinoma Endometrium 850
+47 Instruments 864
+
+[Ophthalmology]
+1 Anatomy and Development of Eye 4
+2 Elementary Optics and Physiology of Vision 24
+3 Myopia and Hypermetropia 50
+4 Astigmatism and Errors of Accomodation 67
+5 Conjunctiva 87
+6 Sclera 118
+7 Basics of Cornea and Infectious Keratitis 132
+8 Non-infectious Disorders of Cornea 156
+9 Retinal vascular disorders and Retinal detachment 185
+10 Macular disorders, Retinal dystrophies, and Vit... 224
+11 Lens - Introduction, Types of Cataract and Clin... 258
+12 Lens - Cataract Surgery, Complications and IOLs 280
+13 Glaucoma 301
+14 Uveitis - Anterior and Intermediate 333
+15 Uveitis - Posterior and Panuveitis 350
+16 Disorders of the Eyelid 365
+17 Disorders of Lacrimal Apparatus and Glands of t... 389
+18 Orbit Anatomy and Ocular Injuries 405
+19 Diseases of the Orbit 422
+20 Strabismus - Introduction, Symptomatology, and ... 442
+21 Strabismus - Types and Treatment 464
+22 Disorders of Visual Pathway and Pupillary Reflexes 489
+23 Disorders of Optic Nerve and Gaze Palsies 510
+24 Tumors of Eye 534
+25 Practical Ophthalmology 551
+26 Eye Signs in Systemic Disease 585
+27 Community Ophthalmology 599
+28 Instruments in Ophthalmology 607
+
+[Orthopaedics]
+1 Basics of fracture and its management 4
+2 Complications of fracture 28
+3 Regional conditions of neck 47
+4 Injuries of clavicle, shoulder and arm 63
+5 Injuries of elbow and forearm 83
+6 Injuries of hand 106
+7 Regional conditions of the upper limb 121
+8 Dislocations of the Hip joint 135
+9 Fractures of femur 152
+10 Injuries of knee, leg and foot 177
+11 AVN and Regional conditions of lower limb 196
+12 Injuries of spine 212
+13 Regional Conditions of Spine 236
+14 Spondylolisthesis & IVDP 251
+15 Injuries of Pelvis 271
+16 Infections of the bone 280
+17 Skeletal Tuberculosis 301
+18 Fractures in children 313
+19 CTEV, Genu varum and valgum 325
+20 Congenital malformations, Perthes disease and SCFE 337
+21 Metabolic Bone Diseases in Children 354
+22 Osteoporosis and Osteomalacia 364
+23 Paget's Disease and Hyperparathyroidism 379
+24 Rheumatoid Arthritis and Osteoarthritis 395
+25 Spondyloarthropathies and Crystal arthropathies 413
+26 Nerve Injuries 429
+27 Benign Tumors Of Bone 446
+28 Malignant Tumors of Bone 478
+29 Implants, splints and traction 501
+30 Trauma amputations, prosthetics and joint repla... 525
+31 Sports Injury 542
+
+[Pathology]
+1 Cellular Genetics, Adaptations and Injury 6
+2 Cell Death 24
+3 Intracellular Accumulations, Pathological Calci... 47
+4 Acute Inflammation 68
+5 Inflammatory Mediators and Granulomatous Inflam... 88
+6 Tissue Repair 110
+7 Disorders of Hemodynamics and Hemostasis 121
+8 Modes of Inheritance 142
+9 Lysosomal and Glycogen Storage Diseases 165
+10 Chromosomal Disorders and Other Genetic Disorders 177
+11 Characteristics of Neoplasms and Epidemiology 201
+12 Molecular Basis of Cancer and Tumor Immunity 216
+13 Carcinogenesis, Paraneoplastic Syndromes and Tu... 236
+14 Components of Immune System 258
+15 Hypersensitivity and Autoimmunity 275
+16 Immunodeficiency Syndromes 288
+17 Amyloidosis and Graft Rejection 311
+18 Microcytic Anemia 327
+19 Normocytic And Macrocytic Anemia 340
+20 Basics of Hemolysis and Intravascular Hemolysis 360
+21 Extravascular Hemolysis 373
+22 G6PD deficiency and Autoimmune Hemolytic Anemias 398
+23 Platelet Disorders 411
+24 Coagulation Pathway Disorders 432
+25 Blood Products and Transfusion Reactions 445
+26 Acute Lymphocytic Leukemia (ALL) 455
+27 Acute Myeloid Leukemia (AML) 467
+28 Hodgkin's Lymphoma 482
+29 Non Hodgkin Lymphomas: General Considerations 501
+30 Non Hodgkin Lymphomas: Low Grade 506
+31 Non Hodgkin Lymphomas: High Grade 535
+32 Multiple Myeloma and Plasma Cell Disorders 551
+33 Myelodysplastic Syndrome, Myeloproliferative Sy... 577
+34 Leukopenia, Leukocytosis and Lymphadenitis 608
+35 Hypertensive Vascular Disease and Atherosclerosis 623
+36 Aneurysm and Dissection 644
+37 Vasculitis 656
+38 Vascular Tumors 673
+39 Heart Failure and Ischemic Disease 692
+40 Myocardial and Pericardial Diseases and Cardiac... 714
+41 Congenital and Valvular Heart Disease 742
+42 Rheumatic Fever and Endocarditis 752
+43 Glomerular Diseases 767
+44 Tubulointerstitial, Vascular and Cystic Diseases 801
+45 Renal Tumors 818
+46 Lower Urinary Tract 844
+47 Female Genital Tract 853
+48 Male Genital Tract 879
+49 Alcoholic and Infectious Liver Disease 909
+50 Autoimmune and Metabolic Liver Disease 936
+51 Neoplasms of Liver and Biliary tract 954
+52 Gall Bladder and Pancreas 967
+53 Esophagus 977
+54 Stomach 998
+55 Small Intestine 1021
+56 Large Intestine - Non-Neoplastic Conditions 1034
+57 Large Intestine - Neoplastic Conditions 1049
+58 Congenital anomalies, ARDS, Infections 1059
+59 Obstructive and Restrictive lung diseases 1084
+60 Lung tumors 1113
+61 Pituitary ,Parathyroids and Pancreas 1125
+62 Thyroid Glands 1139
+63 The Adrenals 1164
+64 The Breast 1179
+65 Developmental disorders,infections and tumors o... 1213
+66 Joints and soft tissue pathology 1239
+67 Skin pathology 1254
+68 Infective & Vascular CNS pathology 1290
+69 Degenerative, Toxic & Metabolic CNS disorders 1304
+70 CNS Tumours 1317
+71 Peripheral nerves & Neuromuscular pathology 1333
+
+[Paediatrics]
+1 Basics of Neonatology and Routine Newborn Care 4
+2 Disorders of Newborn 20
+3 Diseases in Neonates requiring Special Care 39
+4 Apgar score and Neonatal Resuscitation 56
+5 Developmental Milestones 68
+6 Facets of Growth and Development 83
+7 Nutrition and Breastfeeding 101
+8 Protein Energy Malnutrition 117
+9 Deficiency of Fat Soluble Vitamins 131
+10 Deficiency of Water-soluble Vitamins & Trace El... 151
+11 Fluid and Electrolyte Disorders 167
+12 Mendelian and Non-Mendelian Disorders 181
+13 Chromosomal Disorders 213
+14 Metabolic Disorders of Amino Acids 238
+15 Metabolic Disorders of Urea Cycle, Complex Mole... 260
+16 Polio and AIDS 280
+17 Pediatric Bacterial and Parasitic Infections 296
+18 Measles, Mumps, Rubella and Other Viral Infections 325
+19 Surgical GI Disorders 349
+20 Medical GI disorders 371
+21 Disorders of the Liver 384
+22 Neonatal Respiratory Disorders 402
+23 Childhood Respiratory Disorders 422
+24 Fetal Circulation 448
+25 Acyanotic Congenital Heart Diseases 457
+26 Cyanotic Congenital Heart Diseases 479
+27 Pediatric Nephrology 502
+28 Pediatric Urology 525
+29 Disorders of the Nervous System 538
+30 Disorders of Thyroid 579
+31 Congenital Adrenal Hyperplasia and Related Diso... 595
+32 Disorders of the Pituitary Gland 617
+33 Disorders of Puberty 627
+34 Paediatric Hemato-oncology 640
+35 Solid Neoplasms of Childhood 661
+36 Musculoskeletal Disorders 691
+37 Paediatric Rheumatology 705
+38 Pediatric Hematology - Introduction, Bleeding, ... 719
+39 Pediatric Anemias 734
+
+[Pharmacology]
+1 Pharmacokinetics 6
+2 Pharmacodynamics 24
+3 Clinical Trials and Miscellaneous 51
+4 Pharmacokinetics - Calculations 67
+5 ANS Introduction & Parasympathomimetics 77
+6 Sympathomimetics 92
+7 Parasympatholytics 112
+8 Sympatholytics 130
+9 Drugs for Glaucoma 144
+10 Anti-Anginal Drugs 158
+11 Heart Failure Drugs 171
+12 Antihypertensive Drugs 186
+13 Diuretics 202
+14 Anti-Arrythmic Drugs 216
+15 Hypolipidemic Drugs 234
+16 Renin-Angiotensin-Aldosterone System 243
+17 Anti-diuretics 252
+18 Sedatives and Hypnotics 259
+19 Anti-epileptics I 269
+20 Anti-epileptics II 287
+21 Anti-psychotics 304
+22 Anti-manic Drugs 319
+23 Drugs for Parkinson’s Disease 329
+24 Antidepressant and Antianxiety Drugs 341
+25 Opioids - Functions and Classification 359
+26 Synthetic Opioids 372
+27 Opioid Antagonists 388
+28 Alcohols 397
+29 Drugs for Alzheimer's Disease and Other Neurode... 404
+30 General Principles of Antimicrobial Therapy 412
+31 Antimalarial Drugs 419
+32 Sulfonamides , Quinolones and Urinary antiseptics 432
+33 Antimicrobials Acting on 30s Subunit 447
+34 Antimicrobials Acting on 50s Subunit 462
+35 Antiretroviral Drugs 472
+36 Penicillins 488
+37 Cephalosporins, Vancomycin and Carbapenems 502
+38 Miscellaneous Antimicrobials 515
+39 Anti-Protozoal agents and Anthelmintic drugs 523
+40 Antifungal Agents 542
+41 First Line Drugs for Tuberculosis 560
+42 Second Line Drugs for Tuberculosis 575
+43 Anti-leprosy drugs 582
+44 Anti-virals (Non-retroviral) 589
+45 Hypothalamus and Pituitary 601
+46 Thyroid and Antithyroid Agents 610
+47 Corticosteroids 620
+48 Osteoporosis and Calcium Metabolism 634
+49 Anti-Diabetic Drugs - Oral 645
+50 Anti-Diabetic Drugs - Injectable 659
+51 OCPs, Estrogens and Progestins 672
+52 Androgens and Drugs for Erectile Dysfunction 688
+53 Drugs Acting on Uterus 695
+54 NSAIDs 702
+55 Antimigraine and Antigout drugs 713
+56 Anti-rheumatoid drugs 724
+57 Anti-histamines 731
+58 Antiplatelets, Fibrinolytics and Antifibrinolytics 739
+59 Hematinics 750
+60 Anticoagulants 759
+61 Respiratory System 783
+62 Acid Peptic Disorders and Inflammatory Bowel Di... 805
+63 Anti-emetics and Drugs Affecting Gastrointestin... 820
+64 Cell Cycle Specific Cytotoxic Drugs 837
+65 Non Cell Cycle Specific Cytotoxic Drugs 855
+66 Monoclonal Antibodies 871
+67 Interleukins, Growth Factors and Targeted Thera... 886
+
+[Physiology]
+1 Homeostasis and cellular physiology 5
+2 Cellular messengers & Receptors 20
+3 Transport Across Cell Membrane 34
+4 Membrane Potentials 55
+5 Body Fluids 68
+6 Physiology of Nerve 93
+7 Muscle Physiology I 126
+8 Muscle Physiology II 160
+9 Synapse and Junctional Transmission 173
+10 Neurotransmitters 198
+11 Sensory Receptors 210
+12 Somatosensory Pathways 225
+13 Special Senses 241
+14 Motor Physiology - 1 257
+15 Motor Physiology - 2 290
+16 Basal Ganglia and Cerebellum 307
+17 Hypothalamus and Limbic System 321
+18 Higher Mental Functions 330
+19 Functional Anatomy 352
+20 Lung Mechanics 365
+21 Alveolar Gas Exchange 383
+22 Gas Transport in Blood 399
+23 Lung Volumes and Lung Function Tests 416
+24 Respiratory Adaptations in Hypoxia, Anemia and ... 434
+25 Regulation of Respiration 446
+26 Vascular System and Regional Circulation I 468
+27 Vascular System and Regional Circulation II 483
+28 Cardiac Cycle and Cardiac Output 498
+29 Electrophysiology of the Heart 519
+30 Blood Pressure and Regulation 537
+31 Gastrointestinal Secretion and Gastrointestinal... 556
+32 Digestion & Absorption 577
+33 GI Peristalsis and Motility 599
+34 Glomerular Filtration Rate, Renal Blood Flow, a... 622
+35 Renal Tubular Functions, Urine Concentration an... 652
+36 Acid-Base Balance, Renal Hormones and Micturiti... 678
+37 Pituitary and Thyroid 695
+38 The Pancreas 711
+39 The Adrenals 729
+40 Calcium Homeostasis 745
+41 Male Reproductive Physiology 764
+42 Female Reproductive Physiology 783
+43 Exercise Physiology 805
+
+[PSM]
+1 History of Medicine 5
+2 Health Determinants and Indicators 27
+3 Concepts of Disease and Prevention 42
+4 Principles of Epidemiology 60
+5 Descriptive Epidemiology 81
+6 Analytical Epidemiology 92
+7 Experimental Epidemiology 112
+8 Basic Definitions in Infectious Disease Epidemi... 123
+9 Dynamics of Disease Transmission 134
+10 Principles of Immunization and Vaccination 148
+11 Vaccine Production and Storage 162
+12 Sterilization and Disinfection 175
+13 Screening 190
+14 Viral Respiratory Infections 216
+15 Bacterial Respiratory Infections 228
+16 Intestinal Infections 244
+17 Arthropod-Borne Infections 266
+18 Zoonotic Infections - Viral 279
+19 Zoonotic Infections - Bacterial & Parasitic 291
+20 STDs and Surface Infections 300
+21 Non-Communicable Diseases - Cardiovascular Dise... 321
+22 Non-Communicable Diseases - Cancer, Obesity and... 337
+23 National Health Programmes I - NVBDCP 348
+24 National Health Programmes II - NLEP, NTEP & NACO 363
+25 National Health Programmes III - NIS, JSY, RBSK... 383
+26 Demography I: Demographic Cycle, Annual Growth ... 418
+27 Demography II: Demographic indicators 427
+28 Family Planning 440
+29 Preventive Obstetrics, Pediatrics and Geriatrics 456
+30 Energy Metabolism and Macronutrients 475
+31 Micronutrients and Water 485
+32 Food Quality and Processing 496
+33 Concepts of Sociology and Psychology 502
+34 Social Organization and Economics 514
+35 Water - I: Sources and purification of water 529
+36 Water- II: Disinfection of water 546
+37 Water - III: Water Quality and Standards 555
+38 Environmental Meteorology 566
+39 Housing and Ventilation 582
+40 Light, Sound and Radiation 595
+41 Waste and Sewage Disposal 608
+42 Medical Entomology - Mosquitoes and Flies 623
+43 Medical Entomology - Ticks, Fleas and Mites 638
+44 Methods of Pest Control 654
+45 Biomedical Waste Management 664
+46 Disaster Management 678
+47 Occupational Health Diseases 691
+48 ESI and Factories Act 702
+49 Communication for Health Education 711
+50 Health Planning and Management 726
+51 Healthcare In India 742
+52 Healthcare in India- IPHS 2022 Update 756
+53 International Health 766
+54 Descriptive Statistics I - Probability and Data 786
+55 Descriptive Statistics II - Measures of Location 806
+56 Descriptive Statistics III - Measures of Disper... 818
+57 Descriptive Statistics IV - Measures of Position 834
+58 Inferential Statistics 842
+59 Concepts in Hypothesis Testing 849
+60 Tests of Significance 856
+61 Correlational and Predictive Techniques 867
+62 Facets of Clinical Research and Biostatistics 881
+63 Mental Health 896
+64 Genetics and Health 906
+
+[Psychiatry]
+1 Theories of Personality & Defense Mechanisms 4
+2 Symptoms and Clinical Manifestations in Psychiatry 23
+3 Assessment in Psychiatry 35
+4 Specific Treatment Modalities 46
+5 Neuropsychiatric Aspects of Systemic Disorders 66
+6 Schizophrenia 80
+7 Other Psychotic Disorders 101
+8 Delirium 109
+9 Dementia 116
+10 Amnestic Disorders and Other Neurocognitive Dis... 131
+11 Depressive Disorders 136
+12 Bipolar and Related Disorders 160
+13 Alcohol-Related Disorders 171
+14 Other Substance Use Disorders 183
+15 Anxiety Disorders 195
+16 Obsessive-Compulsive and Related Disorders 205
+17 Trauma and Stress-Related Disorders 219
+18 Personality Disorders 228
+19 Somatoform Disorders 236
+20 Factitious Disorders, Malingering and Criminality 242
+21 Dissociative Disorders 248
+22 Sleep Disorders 255
+23 Eating Disorders 274
+24 Impulse-Control Disorders 285
+25 Psychiatric Emergencies 290
+26 Normal Sexuality and Sexual Dysfunction 301
+27 Sexual Disorders and Sexual Abuse 309
+28 Intellectual Disability & Specific Learning Dis... 315
+29 Autism Spectrum Disorder 323
+30 Attention-Deficit Disorders and Disruptive Beha... 328
+31 Neurodevelopmental Motor Disorders 337
+32 Special Areas of Childhood Mental Health 343
+33 Forensic Psychiatry 350
+
+[Radiology]
+1 Fundamentals of X-Ray and CT 3
+2 Fundamentals of USG and MRI 19
+3 Musculosketal System 44
+4 Pleural Effusion, Pneumothorax, Pulmonary Edema... 81
+5 Lung Infections, Sarcoidosis and Lung Cancer 110
+6 Cardiovascular System 139
+7 Congenital Neural Anomalies, Neurocutaneous Dis... 165
+8 Brain Tumors, Neurodegenerative & Demyelinating... 196
+9 Upper GI Radiology and Pneumoperitoneum 235
+10 Lower GI Radiology 267
+11 Hepatobiliary and Pancreatic Radiology 295
+12 Nephroradiology 320
+13 OBG radiology 363
+14 Radiotherapy 381
+15 Nuclear Medicine 397
+
+[Surgery]
+1 Fluids, Electrolytes & Nutrition 5
+2 Shock and Blood Transfusion 25
+3 Instruments & Sutures 41
+4 Paediatric Surgery 101
+5 Trauma - Scores, Investigations and Assessment 130
+6 Trauma - Spinal, Thoracic and Abdominal Injuries 145
+7 Breast - Anatomy, Congenital and Benign Diseases 181
+8 Carcinoma Breast - Risk Factors and Types 204
+9 Investigations in Breast diseases 219
+10 Carcinoma Breast - Staging, Prognosis & Molecul... 239
+11 Carcinoma Breast - Treatment 250
+12 Benign Lesions of Thyroid 275
+13 Thyroid Malignancies 301
+14 The Parathyroids 328
+15 The Adrenals 350
+16 Esophagus - Congenital, Motility & Inflammatory... 365
+17 Esophagus - GERD & Carcinoma 394
+18 Stomach and Duodenum 414
+19 Carcinoma Stomach 442
+20 Metabolic & Bariatric Surgery 457
+21 Small Intestine 472
+22 Large Intestine 508
+23 Appendix 539
+24 Polyps and Colorectal Carcinoma 563
+25 Rectum 594
+26 Anus and Anal Canal 614
+27 Hernia 638
+28 Benign Conditions of Liver 667
+29 Benign Tumors of Liver 702
+30 Malignant Tumors of Liver 715
+31 Gall Bladder 732
+32 Bile Duct 767
+33 Spleen 783
+34 Endocrine Pancreas 798
+35 Congenital Anomalies and Acute Pancreatitis 809
+36 Chronic Pancreatitis 828
+37 Carcinoma Pancreas 849
+38 Congenital Diseases of Kidney and Urinary Calculi 868
+39 Infections and Tumors of Kidney 890
+40 Urinary Bladder and Ureters 916
+41 Prostate 941
+42 Urethra and Penis 960
+43 Testes and Scrotum 981
+44 Head Injury 1003
+45 Oral Cavity & Salivary glands 1026
+46 Burns 1058
+47 Wound Healing, Tissue Repair & Scar 1082
+48 Reconstructive Surgery 1109
+49 Thorax & Lungs 1129
+50 Ischemic Arterial Diseases 1162
+51 Arterial Aneurysms, Dissections and Malformations 1184
+52 Venous Diseases 1204
+53 Lymphatic Diseases 1229
+54 Skin Malignancies 1242

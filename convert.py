@@ -1,192 +1,272 @@
 import os
+import re
 import json
-import shutil
-from pypdf import PdfReader
-from pypdf.generic import NameObject, IndirectObject
+import fitz  # PyMuPDF
+from collections import defaultdict
 
 # ==========================================
-# SETUP FOLDERS
+# CONFIGURATION
 # ==========================================
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-INPUT_FOLDER = os.path.join(SCRIPT_DIR, "Put_PDFs_Here")
-OUTPUT_DIR = os.path.join(SCRIPT_DIR, "MedTrix_Website")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+INPUT_FOLDER = os.path.join(BASE_DIR, "Put_PDFs_Here")
+OUTPUT_FOLDER = os.path.join(BASE_DIR, "MedTrix_Engine_Data")
 
-if not os.path.exists(INPUT_FOLDER):
-    os.makedirs(INPUT_FOLDER)
-    print(f"⚠️ Created folder: {INPUT_FOLDER}")
-    print("Please put your PDFs inside it and run again.")
-    exit()
+# Regex to find "Question X:"
+Q_PATTERN = re.compile(r"^Question\s+(\d+)\s*[:\.]", re.IGNORECASE)
+# Regex to find Options "a) ..."
+OPT_PATTERN = re.compile(r"^([a-d])\)\s+(.*)", re.IGNORECASE)
+# Regex to find Explanations
+SOL_PATTERN = re.compile(r"^Solution to Question\s+(\d+)\s*[:\.]", re.IGNORECASE)
+# Regex to find Answer Keys in tables "1 c"
+KEY_PATTERN = re.compile(r"^(\d+)\s+([a-d])$", re.IGNORECASE)
 
-if not os.path.exists(OUTPUT_DIR):
-    os.makedirs(OUTPUT_DIR)
-
-# ==========================================
-# DEEP IMAGE EXTRACTOR (The Fix)
-# ==========================================
-def extract_images_deep(page, page_num, output_folder, doc_name):
-    """
-    Digs into page resources to find hidden images.
-    """
-    if '/Resources' not in page:
-        return []
-
-    resources = page['/Resources']
-    if '/XObject' not in resources:
-        return []
-
-    xObject = resources['/XObject']
-    # Resolve indirect object if necessary
-    if isinstance(xObject, IndirectObject):
-        xObject = xObject.get_object()
-
-    saved_images = []
-
-    for obj_name in xObject:
-        obj = xObject[obj_name]
-        if isinstance(obj, IndirectObject):
-            obj = obj.get_object()
-
-        # If it's an image
-        if obj['/Subtype'] == '/Image':
-            try:
-                # Determine extension
-                extension = "jpg" # Default
-                if '/Filter' in obj:
-                    if '/FlateDecode' in obj['/Filter']:
-                        extension = "png"
-                    elif '/JPXDecode' in obj['/Filter']:
-                        extension = "jp2"
-                
-                # Generate filename
-                image_name = f"{doc_name}_p{page_num+1}_{obj_name[1:]}.{extension}"
-                image_path = os.path.join(output_folder, image_name)
-                
-                # Extract raw data and save
-                with open(image_path, "wb") as img_file:
-                    img_file.write(obj.get_data())
-                
-                saved_images.append(f"images/{image_name}")
-                print(f"      📸 Found image: {image_name}")
-
-            except Exception as e:
-                print(f"      ⚠️ Skipped an image on page {page_num+1}: {e}")
-
-    return saved_images
-
-# ==========================================
-# MAIN PROCESSING
-# ==========================================
 def clean_text(text):
     if not text: return ""
-    import re
-    # Remove garbage characters
-    text = text.replace("\u00a0", " ").replace("â", "").replace("€", "")
+    text = text.replace("â", "'").replace("€", "").replace("\u00a0", " ")
     text = re.sub(r'\s+', ' ', text).strip()
     return text
 
-print(f"📂 Scanning: {INPUT_FOLDER}")
-pdf_files = [f for f in os.listdir(INPUT_FOLDER) if f.endswith('.pdf')]
-
-if not pdf_files:
-    print("❌ No PDFs found. Please check the folder.")
-else:
-    print(f"🚀 Processing {len(pdf_files)} files...")
+# ==========================================
+# STEP 1: SMART TABLE OF CONTENTS
+# ==========================================
+def extract_chapters_from_pdf(doc):
+    """
+    Tries multiple strategies to find chapters.
+    Returns: [{'title': 'Topic', 'start_page': 5, 'end_page': 10}, ...]
+    """
+    chapters = []
     
-    index_links = []
+    # Regex 1: Standard "1  Introduction  5"
+    # Regex 2: Dotted "Introduction .......... 5"
+    patterns = [
+        re.compile(r"^\s*(\d+)\.?\s+(.+?)\s+(\d+)\s*$"),
+        re.compile(r"^\s*(.+?)\s+\.{2,}\s*(\d+)\s*$")
+    ]
 
-    for pdf_file in pdf_files:
-        doc_name = pdf_file.replace(".pdf", "").replace(" ", "_")
-        print(f"\n📘 Reading: {doc_name}")
-        
-        # Create doc folders
-        doc_out_path = os.path.join(OUTPUT_DIR, doc_name)
-        img_out_path = os.path.join(doc_out_path, "images")
-        if not os.path.exists(img_out_path):
-            os.makedirs(img_out_path)
-            
-        try:
-            reader = PdfReader(os.path.join(INPUT_FOLDER, pdf_file))
-            
-            quiz_data = []
-            full_text = ""
+    print("   ...Scanning for Chapters...")
 
-            # --- SCAN PAGES ---
-            for i, page in enumerate(reader.pages):
-                # 1. Get Text
-                page_text = clean_text(page.extract_text())
-                full_text += page_text + "\n"
-                
-                # 2. Get Images (Deep Scan)
-                page_images = extract_images_deep(page, i, img_out_path, doc_name)
-                
-                # 3. Find Questions on this page
-                # This is a simple finder. If "Question X" is on this page, 
-                # we attach the images found on this page to it.
-                import re
-                q_matches = re.findall(r"(Question\s+\d+)", page_text, re.IGNORECASE)
-                
-                if q_matches:
-                    # If we found a question header, create a basic question entry
-                    # We attach ALL images found on this page to this question entry
-                    for q_header in q_matches:
-                        quiz_data.append({
-                            "text": f"{q_header} (See images)",
-                            "images": page_images,
-                            # Placeholder options/answers since we are just testing image extraction
-                            "options": {"a": "Option A", "b": "Option B"}, 
-                            "correct": "a",
-                            "explanation": "Explanation extracted from end of file."
-                        })
+    # Scan first 10 pages for Index/Contents
+    start_scan_page = -1
+    for i in range(min(10, len(doc))):
+        text = doc[i].get_text("text").lower()
+        if any(x in text for x in ["contents", "index", "syllabus", "topic"]):
+            start_scan_page = i
+            break
+    
+    if start_scan_page != -1:
+        # Scan the page found + the next 2 pages (in case index is long)
+        for i in range(start_scan_page, min(start_scan_page + 3, len(doc))):
+            page_lines = doc[i].get_text("text").split('\n')
+            for line in page_lines:
+                line = clean_text(line)
+                if not line: continue
 
-            # --- GENERATE HTML ---
-            json_str = json.dumps(quiz_data)
-            html = f"""
-            <html>
-            <head>
-                <meta name="viewport" content="width=device-width, initial-scale=1">
-                <title>{doc_name}</title>
-                <style>
-                    body {{ font-family: sans-serif; padding: 20px; background:#f4f4f9; }}
-                    .card {{ background:white; padding:20px; margin-bottom:20px; border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,0.1); }}
-                    img {{ max-width:100%; border-radius:5px; margin:10px 0; border:1px solid #ddd; }}
-                    .btn {{ display:block; padding:10px; background:#007bff; color:white; text-align:center; text-decoration:none; border-radius:5px; }}
-                </style>
-            </head>
-            <body>
-                <h1>{doc_name}</h1>
-                <a href="../index.html" class="btn">Back to Home</a>
-                <div id="quiz"></div>
-                <script>
-                    const data = {json_str};
-                    const div = document.getElementById('quiz');
-                    data.forEach(q => {{
-                        let imgs = '';
-                        if(q.images) q.images.forEach(src => imgs += `<img src="${{src}}"><br>`);
+                # Try matching our patterns
+                for pat in patterns:
+                    match = pat.match(line)
+                    if match:
+                        # If pattern has 3 groups, it's "Num Title Page"
+                        if len(match.groups()) == 3:
+                            title = match.group(2).strip()
+                            page_num = int(match.group(3))
+                        # If pattern has 2 groups, it's "Title.... Page"
+                        else:
+                            title = match.group(1).strip()
+                            page_num = int(match.group(2))
                         
-                        div.innerHTML += `
-                            <div class="card">
-                                <h3>${{q.text}}</h3>
-                                ${{imgs}}
-                                <p><i>(Text extraction simplified for image test)</i></p>
-                            </div>
-                        `;
-                    }});
-                </script>
-            </body>
-            </html>
-            """
-            
-            with open(os.path.join(doc_out_path, f"{doc_name}.html"), "w", encoding="utf-8") as f:
-                f.write(html)
+                        # Basic sanity check: Title shouldn't be a number, Page shouldn't be 0
+                        if len(title) > 2 and page_num > 0:
+                            chapters.append({
+                                "title": title,
+                                "start_page": page_num
+                            })
+                        break
+
+    # Fallback: PDF Metadata Bookmarks (if OCR failed)
+    if not chapters:
+        toc = doc.get_toc()
+        for item in toc:
+            if item[0] == 1: # Level 1 headers
+                chapters.append({"title": item[1], "start_page": item[2]})
+
+    # Calculate End Pages
+    if chapters:
+        # Sort by page number just in case
+        chapters.sort(key=lambda x: x['start_page'])
+        for k in range(len(chapters)):
+            if k < len(chapters) - 1:
+                chapters[k]['end_page'] = chapters[k+1]['start_page'] - 1
+            else:
+                chapters[k]['end_page'] = 9999 # Last chapter goes to end
+        print(f"   ✅ Found {len(chapters)} chapters via TOC.")
+    else:
+        print("   ⚠️ No TOC found. Will auto-chunk later.")
+        
+    return chapters
+
+# ==========================================
+# STEP 2: EXTRACT CONTENT
+# ==========================================
+def extract_full_data(pdf_path, doc_name):
+    doc = fitz.open(pdf_path)
+    
+    # 1. Get Chapters
+    chapters = extract_chapters_from_pdf(doc)
+    
+    # 2. Setup Output
+    img_output_dir = os.path.join(OUTPUT_FOLDER, doc_name, "images")
+    if not os.path.exists(img_output_dir): os.makedirs(img_output_dir)
+    
+    questions_db = defaultdict(lambda: {
+        "id": 0, "text": "", "options": {}, "images": [], 
+        "correct": None, "explanation": "", "page_found": 0
+    })
+    
+    current_q_id = None
+    current_sol_id = None
+
+    # 3. Iterate Pages
+    # print(f"   ...Processing {len(doc)} pages...") # Commented out to reduce spam
+    for page_num, page in enumerate(doc):
+        actual_page_num = page_num + 1
+        
+        # --- IMAGE EXTRACTION ---
+        image_list = page.get_images(full=True)
+        page_images = []
+        for img_idx, img in enumerate(image_list):
+            try:
+                xref = img[0]
+                base_image = doc.extract_image(xref)
+                image_bytes = base_image["image"]
+                ext = base_image["ext"]
+                if len(image_bytes) < 3000: continue # Skip tiny icons
+
+                fname = f"{doc_name}_p{actual_page_num}_img{img_idx}.{ext}"
+                fpath = os.path.join(img_output_dir, fname)
                 
-            index_links.append(f'<li><a href="{doc_name}/{doc_name}.html">{doc_name}</a></li>')
-            print(f"   ✅ Saved HTML. Check the 'images' folder inside {doc_name} to see if they appeared.")
+                with open(fpath, "wb") as f:
+                    f.write(image_bytes)
+                
+                page_images.append(f"images/{fname}")
+            except: pass
 
-        except Exception as e:
-            print(f"   ❌ Failed: {e}")
+        # --- TEXT EXTRACTION ---
+        blocks = page.get_text("blocks")
+        for b in blocks:
+            text = clean_text(b[4])
+            
+            q_match = Q_PATTERN.match(text)
+            if q_match:
+                current_q_id = q_match.group(1)
+                current_sol_id = None
+                questions_db[current_q_id]["id"] = int(current_q_id)
+                questions_db[current_q_id]["page_found"] = actual_page_num
+                questions_db[current_q_id]["text"] += Q_PATTERN.sub("", text).strip() + " "
+                
+                if page_images:
+                    for img in page_images:
+                        if img not in questions_db[current_q_id]["images"]:
+                            questions_db[current_q_id]["images"].append(img)
+                    page_images = []
+                continue
+            
+            opt_match = OPT_PATTERN.match(text)
+            if opt_match and current_q_id and not current_sol_id:
+                questions_db[current_q_id]["options"][opt_match.group(1).lower()] = opt_match.group(2).strip()
+                continue
+            
+            sol_match = SOL_PATTERN.match(text)
+            if sol_match:
+                current_sol_id = sol_match.group(1)
+                current_q_id = None
+                questions_db[current_sol_id]["explanation"] += SOL_PATTERN.sub("", text).strip() + " "
+                continue
+            
+            key_match = KEY_PATTERN.match(text)
+            if key_match:
+                if key_match.group(1) in questions_db:
+                    questions_db[key_match.group(1)]["correct"] = key_match.group(2).lower()
+                continue
+            
+            if current_sol_id:
+                questions_db[current_sol_id]["explanation"] += text + " "
+            elif current_q_id:
+                questions_db[current_q_id]["text"] += text + " "
 
-    # Create Index
-    with open(os.path.join(OUTPUT_DIR, "index.html"), "w") as f:
-        f.write(f"<h1>My Quiz Library</h1><ul>{''.join(index_links)}</ul>")
+    # 4. ORGANIZE INTO CHAPTERS
+    all_questions = sorted(questions_db.values(), key=lambda x: x['id'])
+    final_structure = []
 
-    print("\n🎉 DONE! Go check the 'MedTrix_Website' folder.")
+    if chapters:
+        # We have TOC, bucket them
+        for chap in chapters:
+            chap_qs = [q for q in all_questions if chap['start_page'] <= q['page_found'] <= chap['end_page']]
+            if chap_qs:
+                final_structure.append({
+                    "title": chap['title'],
+                    "questions": chap_qs
+                })
+    else:
+        # FALLBACK: Auto-Chunking (The Fix for Pediatrics/Ortho)
+        print(f"   ⚠️ Auto-chunking {len(all_questions)} questions into sets of 50...")
+        chunk_size = 50
+        for i in range(0, len(all_questions), chunk_size):
+            chunk = all_questions[i:i + chunk_size]
+            if not chunk: continue
+            final_structure.append({
+                "title": f"Questions {chunk[0]['id']} - {chunk[-1]['id']}",
+                "questions": chunk
+            })
+
+    return final_structure
+
+# ==========================================
+# STEP 3: GENERATE OUTPUTS
+# ==========================================
+def save_outputs(doc_name, structure):
+    doc_dir = os.path.join(OUTPUT_FOLDER, doc_name)
+    with open(os.path.join(doc_dir, "data.json"), "w", encoding="utf-8") as f:
+        json.dump(structure, f, indent=4)
+
+    html = f"""<html><head><title>{doc_name}</title>
+    <style>
+        body{{font-family:sans-serif;padding:20px;background:#f4f4f9}}
+        .chapter{{background:white;padding:20px;margin-bottom:30px;border-radius:8px;box-shadow:0 2px 5px rgba(0,0,0,0.1)}}
+        .h2{{color:#007bff;border-bottom:2px solid #007bff;padding-bottom:10px}}
+        .q{{margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid #eee}}
+        .img{{max-width:400px;display:block;margin:10px 0;border:1px solid #ccc}}
+        .opt{{margin:5px 0;padding:5px}}
+        .correct{{background-color:#d4edda;font-weight:bold}}
+        .exp{{background:#fff3cd;padding:10px;margin-top:10px;font-size:0.9em}}
+    </style></head><body><h1>{doc_name}</h1>"""
+
+    for chap in structure:
+        html += f"<div class='chapter'><h2 class='h2'>{chap['title']}</h2>"
+        for q in chap['questions']:
+            img_html = "".join([f"<img src='{img}' class='img'>" for img in q['images']])
+            opts_html = "".join([f"<div class='opt {'correct' if k==q['correct'] else ''}'>{k}) {v}</div>" for k,v in q['options'].items()])
+            html += f"<div class='q'><p><b>Q{q['id']}:</b> {q['text']}</p>{img_html}{opts_html}<div class='exp'><b>Exp:</b> {q['explanation'][:300]}...</div></div>"
+        html += "</div>"
+    html += "</body></html>"
+    
+    with open(os.path.join(doc_dir, "view.html"), "w", encoding="utf-8") as f:
+        f.write(html)
+
+# ==========================================
+# MAIN RUNNER
+# ==========================================
+if not os.path.exists(INPUT_FOLDER):
+    os.makedirs(INPUT_FOLDER)
+    print("Created input folder.")
+    exit()
+
+files = [f for f in os.listdir(INPUT_FOLDER) if f.endswith(".pdf")]
+print(f"📂 Found {len(files)} PDFs...")
+
+for f in files:
+    name = f.replace(".pdf", "").replace(" ", "_")
+    path = os.path.join(INPUT_FOLDER, f)
+    print(f"\n📘 Processing: {name}")
+    data = extract_full_data(path, name)
+    save_outputs(name, data)
+    print(f"   ✅ Done! Saved to MedTrix_Engine_Data/{name}/")
