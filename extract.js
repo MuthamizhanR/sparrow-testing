@@ -1,70 +1,64 @@
 const fs = require('fs-extra');
 const path = require('path');
+const pdf = require('pdf-parse');
 
-console.log('🚀 PDF to MCQ Converter - Simple Version');
-console.log('=========================================\n');
+// CONFIGURATION
+const PDF_DIR = './pdf_files';
+const OUTPUT_FILE = './extracted_data/raw_text.json';
 
-// Check for PDF files
-const pdfDir = './pdf_files';
-const outputDir = './extracted_data';
+async function extractRealData() {
+    console.log("🚀 Starting REAL PDF Extraction...");
+    
+    // 1. Check folders
+    await fs.ensureDir(PDF_DIR);
+    await fs.ensureDir('./extracted_data');
 
-async function main() {
+    // 2. Find PDF files
+    let files = [];
     try {
-        await fs.ensureDir(pdfDir);
-        await fs.ensureDir(outputDir);
-        
-        const files = await fs.readdir(pdfDir);
-        const pdfFiles = files.filter(f => f.endsWith('.pdf'));
-        
-        if (pdfFiles.length === 0) {
-            console.log('❌ No PDF files found in pdf_files directory!');
-            console.log('\n📋 INSTRUCTIONS:');
-            console.log('1. Copy your PDF files to the pdf_files folder');
-            console.log('2. Run: npm run extract');
-            console.log('3. Then run: npm run convert');
-            console.log('4. Finally run: npm run build');
-            return;
-        }
-        
-        console.log(`📚 Found ${pdfFiles.length} PDF files:`);
-        pdfFiles.forEach((file, index) => {
-            console.log(`   ${index + 1}. ${file}`);
-        });
-        
-        console.log('\n✅ Extraction setup complete!');
-        console.log('💡 For now, we will create sample data directly from your content.');
-        
-        // Create sample extracted data
-        const sampleData = {
-            filename: "Psychiatry.pdf",
-            totalChapters: 1,
-            chapters: [
-                {
-                    title: "Theories of Personality & Defense Mechanisms",
-                    questions: [
-                        {
-                            id: 1,
-                            question: "Which of the following is not a contribution by Sigmund Freud?",
-                            options: {
-                                "a": "Free association",
-                                "b": "Introducing cocaine in psychiatry", 
-                                "c": "Psychodynamic theory",
-                                "d": "Psychosocial theory"
-                            },
-                            correct: "d",
-                            explanation: "Sigmund Freud is credited with all except psychosocial theory (proposed by Erik Erikson)."
-                        }
-                    ]
-                }
-            ]
-        };
-        
-        await fs.writeJson(path.join(outputDir, 'sample_extracted.json'), sampleData, { spaces: 2 });
-        console.log('✅ Created sample extracted data');
-        
-    } catch (error) {
-        console.error('❌ Error:', error.message);
+        files = fs.readdirSync(PDF_DIR).filter(file => file.toLowerCase().endsWith('.pdf'));
+    } catch (e) {
+        console.log("❌ Error reading folder. Make sure 'pdf_files' exists.");
+        return;
     }
+
+    if (files.length === 0) {
+        console.log("⚠️ No PDFs found! Please upload files to the 'pdf_files' folder.");
+        return;
+    }
+
+    console.log(`📚 Found ${files.length} PDFs. Extracting text now...`);
+    let allTextData = [];
+
+    // 3. Loop through every file and extract text
+    for (const file of files) {
+        process.stdout.write(`   📄 Processing: ${file} ... `); // Print without newline
+        const filePath = path.join(PDF_DIR, file);
+        
+        try {
+            const dataBuffer = fs.readFileSync(filePath);
+            const data = await pdf(dataBuffer);
+            
+            // Basic cleaning: Remove "null" bytes and excessive whitespace
+            let cleanText = data.text.replace(/\u0000/g, ''); 
+            
+            allTextData.push({
+                filename: file,
+                text: cleanText
+            });
+            console.log("✅ Done.");
+        } catch (err) {
+            console.log("❌ Failed!");
+            console.error(`      Error: ${err.message}`);
+        }
+    }
+
+    // 4. Save the REAL data
+    await fs.writeJson(OUTPUT_FILE, allTextData, { spaces: 2 });
+    console.log("\n===========================================");
+    console.log(`🎉 SUCCESS! Extracted text saved to: ${OUTPUT_FILE}`);
+    console.log("👉 NEXT STEP: Run 'npm run convert' to turn this text into questions.");
+    console.log("===========================================");
 }
 
-main();
+extractRealData();
