@@ -1,0 +1,23 @@
+{
+  "filename": "Psychiatry.pdf",
+  "totalChapters": 1,
+  "chapters": [
+    {
+      "title": "Theories of Personality & Defense Mechanisms",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Which of the following is not a contribution by Sigmund Freud?",
+          "options": {
+            "a": "Free association",
+            "b": "Introducing cocaine in psychiatry",
+            "c": "Psychodynamic theory",
+            "d": "Psychosocial theory"
+          },
+          "correct": "d",
+          "explanation": "Sigmund Freud is credited with all except psychosocial theory (proposed by Erik Erikson)."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "chapter": "Symptoms and Clinical Manifestations in Psychiatry",
+  "description": "Psychopathology, hallucinations, delusions, and clinical signs",
+  "totalQuestions": 1,
+  "questions": [
+    {
+      "id": 1,
+      "question": "A patient is mute and immobile but conscious. He is unresponsive to the environment. How would you describe his state?",
+      "options": {
+        "a": "Akinetic mutism",
+        "b": "Stupor",
+        "c": "Sopor",
+        "d": "Twilight state"
+      },
+      "correct": "b",
+      "explanation": "A patient is said to be in a stupor when he is conscious but mute, immobile, and unresponsive to the environment.",
+      "image": null,
+      "tags": [
+        "consciousness",
+        "stupor"
+      ]
+    }
+  ]
+}
